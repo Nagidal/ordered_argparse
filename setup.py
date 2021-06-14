@@ -16,10 +16,6 @@ with open(this_dir / "README.md", encoding="utf-8") as file:
     long_description = file.read()
 
 
-with open(this_dir / "requirements.txt", encoding="utf-8") as reqs:
-    requirements = [line.strip() for line in reqs]
-
-
 def get_property(property: str, path_to_init_file: pathlib.Path) -> str:
     """
     Reads a property from `path_to_init_file`
@@ -69,7 +65,7 @@ setup(
             project_name: [],
             },
         python_requires=">=3.9",
-        install_requires=requirements,
+        install_requires=[],
         entry_points={
             "console_scripts": [],
             },
