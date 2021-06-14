@@ -42,6 +42,7 @@ setup(
         version=get_property("__version__", path_to_init_file),
         description="Modified version of argparse which remembers the ordere of CLI arguments",
         long_description=long_description,
+        long_description_content_type="text/markdown",
         author=get_property("__author__", path_to_init_file),
         author_email=get_property("__author_email__", path_to_init_file),
         url="https://github.com/Nagidal/ordered_argparse",
@@ -57,7 +58,7 @@ setup(
             "Natural Language :: English",
             "Programming Language :: Python :: 3.9",
             "Operating System :: OS Independent",
-            "Operating System :: Microsoft :: Windows"
+            "Operating System :: Microsoft :: Windows",
             "Operating System :: POSIX :: Linux",
             "Operating System :: MacOS :: MacOS X",
             ],
