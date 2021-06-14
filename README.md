@@ -17,7 +17,7 @@ parser = ordered_argparse.ArgumentParser()
 parser.add_argument("--foo", action="store_true", help="foo")
 parser.add_argument("--bar", action="store_true", help="bar")
 
-# Use Ordered_Namespace when parsing CLI arguments
+# Use OrderedNamespace when parsing CLI arguments
 args = parser.parse_args(["--foo", "--bar"], namespace=ordered_argparse.OrderedNamespace())
 
 # Access ordered arguments by calling .ordered()
