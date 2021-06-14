@@ -76,6 +76,7 @@ __all__ = [
     'RawTextHelpFormatter',
     'MetavarTypeHelpFormatter',
     'Namespace',
+    'OrderedNamespace',
     'Action',
     'ONE_OR_MORE',
     'OPTIONAL',
@@ -92,7 +93,7 @@ import sys as _sys
 
 from gettext import gettext as _, ngettext
 from collections import OrderedDict
-from claws.loggerdef import logger
+# from claws.loggerdef import logger
 
 SUPPRESS = '==SUPPRESS=='
 
@@ -1339,21 +1340,21 @@ class OrderedNamespace(Namespace):
         super().__init__(**kwargs)
     def __setattr__(self, attr, value):
         # logger.trace(f"{self.__dict__['_order'] = }")
-        logger.trace(f"{self.__dict__['_ignore_arg_len'] = }")
-        logger.trace(f"{self.__dict__['_any_cli_args'] = }")
-        logger.trace(f"Setting attribute {attr} to {value}")
+        # logger.trace(f"{self.__dict__['_ignore_arg_len'] = }")
+        # logger.trace(f"{self.__dict__['_any_cli_args'] = }")
+        # logger.trace(f"Setting attribute {attr} to {value}")
         super().__setattr__(attr, value)
         # Check if you have any shortcuts
         if attr.endswith("_shortcut"):
             self.__dict__["_any_shortcuts"] = True
-        logger.trace(f"{self.__dict__['_order'] = }")
+        # logger.trace(f"{self.__dict__['_order'] = }")
         if attr in self._order and not self.__dict__["_any_cli_args"]:
-            logger.trace(f"in the if clause")
+            # logger.trace(f"in the if clause")
             self.__dict__["_any_cli_args"] = True
             self.__dict__["_ignore_arg_len"] = len(self.__dict__["_order"])
         self.__dict__["_order"].append(attr)
-        logger.trace(f"{vars(self) = }")
-        logger.trace(f"=" * 30)
+        # logger.trace(f"{vars(self) = }")
+        # logger.trace(f"=" * 30)
     def ordered(self, as_dict: bool=False):
         if as_dict:
             if self._any_cli_args:
