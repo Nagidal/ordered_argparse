@@ -63,8 +63,11 @@ considered public as object names -- the API of the formatter objects is
 still considered an implementation detail.)
 """
 
-# __version__ = '1.1'
-__version__ = '1.2'
+__version__ = '1.0.0'
+__author__ = "Steven J. Bethard <steven.bethard@gmail.com>, Sven Siemund"
+__author_email__ = "sven.siegmund@gmail.com"
+__maintainer__ = "Sven Siegmund"
+__url__ = "https://github.com/Nagidal/ordered_argparse"
 __all__ = [
     'ArgumentParser',
     'ArgumentError',
