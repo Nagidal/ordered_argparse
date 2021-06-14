@@ -8,7 +8,7 @@ Install with `pip install ordered_argparse`.
 
 ## Usage
 
-Create an instance ArgumentParser as usual. Use `namespace=ordered_argparse.OrderedNamespace()`. Access arguments in declaration order by calling parser's `.ordered()` method.
+Create an instance of `ArgumentParser` as usual. Use `namespace=ordered_argparse.OrderedNamespace()`. Access arguments in declaration order by calling parser's `.ordered()` method.
 
 ```python
 import ordered_argparse
@@ -24,3 +24,8 @@ args = parser.parse_args(["--foo", "--bar"], namespace=ordered_argparse.OrderedN
 for arg in args.ordered():
     print(f"{arg}")
 ```
+
+## Compatibility with argcomplete
+
+ordered_argparse only works with `argcomplete` as long as you don't use subparsers. If you use subparsers, you need `ordered_argcomplete`.
+
